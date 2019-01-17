@@ -151,7 +151,9 @@ public:
   Log& operator<<(int val);
   Log& operator<<(uint32_t val);
   Log& operator<<(long val);
+#ifndef STM32
   Log& operator<<(unsigned long val);
+#endif
   Log& operator<<(long long val);
   Log& operator<<(unsigned long long val);
   Log& operator<<(float val);

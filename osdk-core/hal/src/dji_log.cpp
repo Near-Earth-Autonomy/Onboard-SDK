@@ -166,6 +166,7 @@ Log::operator<<(long val)
   return *this;
 }
 
+#ifndef STM32
 Log&
 Log::operator<<(unsigned long val)
 {
@@ -173,6 +174,7 @@ Log::operator<<(unsigned long val)
   print("%lu", val);
   return *this;
 }
+#endif
 
 Log&
 Log::operator<<(long long val)
