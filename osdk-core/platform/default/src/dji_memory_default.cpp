@@ -32,7 +32,6 @@
 #include "dji_log.hpp"
 
 #ifdef qt
-#elif defined(stm32)
 #elif defined(__linux__)
 #include <pthread.h>
 

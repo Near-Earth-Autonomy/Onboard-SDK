@@ -47,15 +47,15 @@
 #ifdef QT
 #include "qt_serial_device.hpp"
 #include "qt_thread.hpp"
+#elif STM32
+//! handle array of characters
+#include <stdlib.h>
+#include <string.h>
 #elif defined(__linux__)
 //! handle array of characters
 #include "linux_serial_device.hpp"
 #include "posix_thread_manager.hpp"
 #include <cstring>
-#elif STM32
-//! handle array of characters
-#include <stdlib.h>
-#include <string.h>
 #endif
 
 namespace DJI

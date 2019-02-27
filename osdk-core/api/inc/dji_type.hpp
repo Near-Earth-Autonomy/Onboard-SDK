@@ -65,7 +65,9 @@
 #endif
 
 #ifdef STM32
+#ifndef __SIZE_TYPE__
 typedef unsigned int size_t;
+#endif
 #endif
 
 namespace DJI

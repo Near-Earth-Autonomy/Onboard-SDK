@@ -38,13 +38,13 @@
 #ifdef QT
 #include <qt_serial_device.hpp>
 #include <qt_thread.hpp>
+#elif STM32
+#include "STM32F4DataGuard.h"
+#include "STM32F4SerialDriver.h"
 #elif defined(__linux__)
 #include "linux_serial_device.hpp"
 #include "posix_thread.hpp"
 #include "posix_thread_manager.hpp"
-#elif STM32
-#include "STM32F4DataGuard.h"
-#include "STM32F4SerialDriver.h"
 #endif
 
 namespace DJI
