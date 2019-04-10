@@ -45,6 +45,9 @@ endif (MSVC)
 
 if (CMAKE_SYSTEM_NAME MATCHES Linux)
   set(COMMON_CXX_FLAGS "-std=c++11 -pthread")
+  ## Libraries to propagate as dependencies to third-party code depending on osdk-core
+  ## Append to this variable when you want a dependency to get propagated
+  SET(OSDK_INTERFACE_LIBS pthread) # pthread is assumed available on linux
 endif ()
 
 if (CMAKE_SYSTEM_NAME MATCHES Darwin)
@@ -108,9 +111,6 @@ add_library(${PROJECT_NAME}
         STATIC
         ${OSDK_LIB_SRCS})
 
-## Libraries to propagate as dependencies to third-party code depending on osdk-core
-## Append to this variable when you want a dependency to get propagated
-SET(OSDK_INTERFACE_LIBS pthread) # pthread is assumed available on linux
 
 ## Modules to link/build against
 ## Append to these variables with build/install locations when adding new OSDK modules
